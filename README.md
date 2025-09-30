@@ -64,3 +64,25 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Anti-spam contact endpoint
+
+POST `/contact` or `/api/contact` with JSON:
+
+```
+{
+  "name": "Ahmet Yılmaz",
+  "email": "user@example.com",
+  "phone": "+90555...",
+  "message": "First sentence. Second sentence. Third sentence.",
+  "website": "" 
+}
+```
+
+CLI helpers:
+
+```
+php artisan spam:block-name "JYupWMLW" --reason="spam burst"
+php artisan spam:unblock-name "JYupWMLW"
+php artisan spam:purge-old --days=90
+```
